@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Hangman-Game</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<body>
+
+	<!-- header message -->
+	<div class="page-header text-center">
+ 	 <span id="welcome-message"></span>
+	</div>
+
+	<!-- main content -->
+
+	<!-- guess side -->
+	<div class="row">
+		<div class="container">
+			<div class="col-md-6">
+				<div class="panel panel-primary">
+  					<div class="panel-heading">
+    					<h3>Guess the words below :</h3>
+  					</div>
+  					<div class="panel-body">
+   						 <div class="text-center"><h1><span id="guess-placeholder"></span></h1></div><br>
+   						 <div class="text-center"><h4>Hint : <span id="hint-placeholder"></span></h4></div>
+   					</div>
+				</div>
+				<div class="panel panel-info">
+					<div class="panel-heading">
+						<h4>You have guessed so far...</h4>
+					</div>
+					<div class="panel-body">
+						<div><h3><span id="user-guess"></span></h3></div>
+					</div>
+				</div>
+			</div>
+
+			<!-- score side -->
+			<div class="col-md-5 col-md-offset-1">
+				<div class="panel panel-info">
+					<div class="panel-heading">
+						<h3>Score :</h3>
+					</div>
+					<div class="panel-body">
+						<div><h4>Guess remaining : <span id="guess-counter"></span></h4></div><br>
+						<div><h4>Wins : <span id="win-counter"></span></h4></div><br>
+						<div><h4>Losses : <span id="lose-counter"></span></h4></div><br>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+
+			
+		</div>
+	</div>
+
+	<!-- script source -->
+<script type="text/javascript" src="assets/javascript/game.js"></script>
+</body>
+</html>
