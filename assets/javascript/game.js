@@ -54,21 +54,34 @@ var guessCounter = 0;
 var winCounter = 0;
 var loseCounter = 0;
 
+// main funtion for start game
 function startGame (){
 
+	// random number base on arr.length
 	randomNumber = Math.floor(Math.random() * arr.randomWord.length);
+
+	// randomword by using random number to pick up word
 	chosenWord = arr.randomWord[randomNumber];
+
+	// determine character to put blanks on
 	numLetters = chosenWord.length;
-	chosenHint = arr.randomHint[randomNumber];	
+
+	// random hint by using random number to pick up hin HAS TO MATCH WITH WORD
+	chosenHint = arr.randomHint[randomNumber];
+
+	// guesscount number determin by lenght of the word 
 	guessCounter = numLetters + 1;
+
+	// clear array for .push
 	userGuess = [];
 	blankWord = [];
 
+	// push blanks as the amount of word
 	for (i=0; i<numLetters; i++) {
 	blankWord.push("_")
-	
 	}
 
+	// display to the screen
 	document.getElementById("hint-placeholder").innerHTML = chosenHint;
 	document.querySelector("#guess-counter").innerHTML = guessCounter;
 	document.querySelector("#guess-placeholder").innerHTML = blankWord.join(" ");
@@ -76,7 +89,7 @@ function startGame (){
 	document.querySelector("#win-counter").innerHTML = winCounter;
 	document.querySelector("#lose-counter").innerHTML = loseCounter;
 };
-
+// call function
 startGame();
 
 
@@ -90,10 +103,9 @@ console.log(blankWord);
 
 
 
-// Create function when user type
+// Create function to check if it matches with any character of the word.
 function userType(letter) {
 
-	// var userInput = event.key;
 
 	var checkLetter = false;
 	
@@ -114,6 +126,7 @@ function userType(letter) {
 			
 			}
 		}
+
  	document.getElementById("guess-placeholder").innerHTML = blankWord.join(" ");
 	console.log(blankWord);
 
@@ -124,15 +137,15 @@ function userType(letter) {
 		userGuess.push(letter);
 		guessCounter--;
 		document.querySelector("#user-guess").innerHTML = userGuess.join(" ");
+		document.querySelector("#guess-counter").innerHTML = guessCounter;
 		console.log(userGuess);
 	}
 };
 
-
+// function to run each time when user time to make changes of the scores
 function scoreCheck () {
 
-	document.querySelector("#guess-counter").innerHTML = guessCounter;
-
+	
 	var chosenWordCheck = chosenWord.toString()
 	var correctLetter = blankWord.join("");
 
@@ -140,22 +153,25 @@ function scoreCheck () {
 
 		winCounter++;
 		document.querySelector("#win-counter").innerHTML = winCounter;
-		startGame();
+		startGame();;
+	
 
+		
 	}
 	else if (guessCounter == 0) {
 		loseCounter++;
 		document.querySelector("#lose-counter").innerHTML = loseCounter;
 		startGame();
+
 	}
 };
 
-
+// function when user type
 document.onkeyup = function () {
 
 	var input = String.fromCharCode(event.keyCode).toLowerCase();
-
 	userType(input);
 	scoreCheck();
-}
+};
+
 

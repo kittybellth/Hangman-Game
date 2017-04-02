@@ -2,7 +2,18 @@
 <html>
 <head>
 	<title>Hangman-Game</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<style>
+		body {
+			min-height: 100%;
+			background-image: url(assets/images/sadness.jpeg);
+			background-repeat: no-repeat;
+			background-position: 0px 330px;
+			background-size: 20%;
+		}
+	</style>
 </head>
 <body>
 
@@ -11,9 +22,7 @@
  	 <span id="welcome-message"></span>
 	</div>
 
-	<!-- main content -->
-
-	<!-- guess side -->
+	<!-- main guess content -->
 	<div class="row">
 		<div class="container">
 			<div class="col-md-6">
@@ -26,6 +35,10 @@
    						 <div class="text-center"><h4>Hint : <span id="hint-placeholder"></span></h4></div>
    					</div>
 				</div>
+			</div>
+
+			<!-- user input side -->
+			<div class="col-md-5 col-md-offset-1">
 				<div class="panel panel-info">
 					<div class="panel-heading">
 						<h4>You have guessed so far...</h4>
@@ -34,27 +47,19 @@
 						<div><h3><span id="user-guess"></span></h3></div>
 					</div>
 				</div>
-			</div>
 
-			<!-- score side -->
-			<div class="col-md-5 col-md-offset-1">
+				<!-- score side -->
 				<div class="panel panel-info">
 					<div class="panel-heading">
 						<h3>Score :</h3>
-					</div>
+				</div>
 					<div class="panel-body">
-						<div><h4>Guess remaining : <span id="guess-counter"></span></h4></div><br>
-						<div><h4>Wins : <span id="win-counter"></span></h4></div><br>
-						<div><h4>Losses : <span id="lose-counter"></span></h4></div><br>
+						<div><h4> <span id="guess">Guess remaining : </span><span id="guess-counter"></span></h4></div><br>
+						<div><h4><span id="win">Wins :   </span><span id="win-counter"></span></h4></div><br>
+						<div><h4><span id="lose">Losses :   </span><span id="lose-counter"></span></h4></div><br>
 					</div>
 				</div>
 			</div>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-md-12">
-
-			
 		</div>
 	</div>
 
